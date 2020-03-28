@@ -18,5 +18,7 @@ body {
     @apply p-4;
 }
 .repos-list li{
+    @apply p-4;
+
     break-inside: avoid-column;
 }
