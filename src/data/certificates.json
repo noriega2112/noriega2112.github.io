@@ -1,0 +1,26 @@
+{
+    "data": {
+        "email": "adolfonoriega9@gmail.com",
+        "username": "edwinnoriega",
+        "certificates": [ ],
+        "articles": [ ],
+        "courses": [
+            {
+                "title": "Desarrollo Web Online",
+                "progress": "13.0",
+                "url": "https://platzi.com/@Noriega2112/curso/1350-html5-css3/diploma/detalle/"
+            },
+            {
+                "title": "Crea un sitio personal con Gatsby",
+                "progress": "50.0",
+                "url": "http://codigofacilito.com/courses/sitio-persional-gatsby"
+            },
+            {
+                "title": "Master en Javascript",
+                "progress": "50.0",
+                "url": "https://www.udemy.com/certificate/UC-CGLLQYJ2/"
+            }
+            
+        ]
+    }
+}
