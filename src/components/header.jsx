@@ -8,10 +8,10 @@ export default () => (
             <div className="flex justify-center items-center">
                 
                 <div className="flex-1">
-                    <h1 className="font-bold text-blue-500 text-6xl">¡Hola! Soy Edwin</h1>
-                    <p className="text-xl font-light">Creo aplicaciones web y de escritorio.</p>
+                    <h1 className="font-bold text-blue-500 text-3xl sm:text-6xl">¡Hola! Soy Edwin</h1>
+                    <p className="text-base sm:text-xl font-light">Creo aplicaciones web y de escritorio.</p>
                 </div>
-                <img src={illustration} alt="Ilustración informática" style={{height: "300px"}}/>
+                <img src={illustration} alt="Ilustración informática" style={{height: "200px"}}/>
                 </div>
 
             <div>
