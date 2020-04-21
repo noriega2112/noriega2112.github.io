@@ -1,15 +1,54 @@
-import React from 'react';
+import React from "react";
 
-export default () => (
-    <form className="mt-16 text-center">
-        <label htmlFor="contact-content"className="block text-gray-7s00 text-sm font-bold mb-2">Cuéntame de esa idea que quieres hacer realidad:</label>
-        <div className="flex shadow rounded bg-white border p-2">
-            <textarea 
-            id="contact-content"
-            name="contact-content"
-            className="flex-1 py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-            ></textarea>
-            <button className="btn ml-4">Enviar</button>
+export default class MyForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: ""
+    };
+  }
+
+  render() {
+    const { status } = this.state;
+    return (
+      <form
+        onSubmit={this.submitForm}
+        action="https://formspree.io/mknvlaqa"
+        method="POST"
+      >
+        <div className="contact sm:max-w-4xl mx-auto">
+            <div className="xl:inp">
+                <label>Email:</label> <br/>
+                <input type="email" name="email" placeholder="ejemplo@ejemplo.com" className="envio shadow-md" />
+            </div>
+            <div className="xl:inp">
+                <label>Mensaje:</label><br/>
+                <textarea name="message" cols="23" rows="10"className="envio shadow-md" placeholder="Mensaje"></textarea>
+            </div>
+        {status === "SUCCESS" ? <p>Gracias!</p> : <button className="btn contactar sm:contactar2">Contactar</button>}
+        {status === "ERROR" && <p>Ooops! Hubo un error.</p>}
         </div>
-    </form>
-);
+      </form>
+    );
+  }
+
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
+}

@@ -3,22 +3,98 @@
 @tailwind components;
 
 @tailwind utilities;
-
+*{
+    box-sizing: border-box;
+}
 body {
     @apply bg-gray-100;
 }
 .btn{
     @apply bg-blue-500 text-white font-bold rounded border-blue-800 py-2 px-4 border-b-4;
-}       
-
+}   
+.btn-codigo{
+    @apply bg-blue-200 text-black font-bold rounded border-blue-800 py-2 px-4 border-b-4;
+}
+.demo{
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+.demo-btn{
+    justify-content: center;
+    width: 50%;
+    margin: 0px 5px 0px 5px;
+}
 .repos-list{
-    columns: 3;
+    columns: 2;
     -moz-columns: 3;
     column-rule: 1px solid;
     @apply p-4;
 }
 .repos-list li{
     @apply p-4;
-
+    
     break-inside: avoid-column;
+}
+.modal{
+    border-radius: 10px;
+    margin: 20px;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: 95vw;
+    height: 95vh;
+}
+.inner-modal{
+    margin: 0 auto;
+    width: 90%;
+    height: 95%;
+}
+.live-demo{
+    max-width: 1024px;
+    max-height: 100%;
+    width: 100%;
+    height: 90%;
+    margin: 0 auto;
+}
+.live-demom{
+    margin: 0 auto;
+    max-width: 90vw;
+    width: 100%;
+    height: 100%;
+    max-height: 640px;
+}
+img{
+    margin: 0 auto;
+}
+.modal-close{
+    margin-top: 5px;
+    float: right;
+    padding-bottom: 10px;
+}
+.contact{
+    margin-top: 20px;
+    width: 100%;
+}
+.inp{
+    width: 50%;
+}
+textarea, input{
+    margin: 5px;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 5px;
+}
+label{
+    align-items: center;
+}
+.envio{
+    width: 90%;
+}
+.contactar{
+    align-items: center;
+}
+.contactar2{
+    float: right;
+    margin-right: 20px;
 }
